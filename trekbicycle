@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BikeWorks
+{
+    enum Models {Santa_Cruz ,Norco ,Trek ,NS, Radon}
+    public class bike
+    {
+        public float WheelSize;
+        public string bikeSize;
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             int wheel = 26;
+             bike Trek = new bike();
+                Console.WriteLine("Welcome to Trek bicycle shop" + "\n");
+                Console.WriteLine("Send your favorite FrameSize on trek bike.(S,M,L,XL)");
+            Trek.bikeSize = Convert.ToString(Console.ReadLine());
+            if (Trek.bikeSize == "S")
+                Console.WriteLine("\n" + "This frame size is suitable for people no taller than 170 cm.");
+            else if (Trek.bikeSize == "M")
+                Console.WriteLine("\n"+"This frame size is suitable for people no taller 170 - 178 cm.");
+            else if (Trek.bikeSize == "L")
+                Console.WriteLine("\n"+"This frame size is suitable for people no taller 178 - 184 cm.");
+            else if (Trek.bikeSize == "Xl")
+                Console.WriteLine("\n"+"This frame size is suitable for people no taller 186 and lower cm.");
+                Console.WriteLine("Send your favorite WheelSize: 26 , 27.5 , 29");
+            Trek.WheelSize = Convert.ToInt32(Console.ReadLine());
+            if (Trek.WheelSize == 26)
+                Console.WriteLine("Its wheel so old ,and not have on sale: " + Trek.WheelSize);
+            else if (Trek.WheelSize == 27.5)
+                Console.WriteLine("Its so good wheelsize that 2021.(Freeride)");
+            else if (Trek.WheelSize == 29)
+                Console.WriteLine("Its so agressive wheel that Downhill"+ "\n");
+            Console.WriteLine("Ok.Its pretty cool choise.");
+            Console.WriteLine("\n"+"WheelSize Trek bike is: " + Trek.WheelSize + "\n" + "BikeSize Trek is: " + Trek.bikeSize);
+            Console.ReadKey();
+
+            //bike Santa_Cruz = new bike();
+            //Santa_Cruz.WheelSize = 27.5f;
+            //Santa_Cruz.bikeSize = "L";
+            //Console.WriteLine("WheelSize Santa Cruz bike is : " + Santa_Cruz.WheelSize + "\n" +
+              //                "BikeSize Santa Cruz bike is : " + Santa_Cruz.bikeSize + "\n");
+            //bike Norco = new bike();
+            //Norco.WheelSize = 26;
+            //Norco.bikeSize = "M";
+            //Console.WriteLine("WheelSize Norco bike is: " + Norco.WheelSize + "\n" +
+                             //  "BikeSize Norco bike is: " + Norco.bikeSize + "\n");
+        }
+    }
+}
