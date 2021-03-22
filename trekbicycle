@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BikeWorks
+{
+    enum Models { Santa_Cruz, Norco, Trek, NS, Radon }
+    public class bike
+    {
+        public double WheelSize;
+        public string bikeSize;
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bike Trek = new bike();
+            Console.WriteLine("Welcome to Trek bicycle shop" + "\n");
+            Console.WriteLine("Choise your favorite FrameSize on trek bike.(S,M,L,XL)");
+            Trek.bikeSize = Convert.ToString(Console.ReadLine());
+            switch (Trek.bikeSize){ 
+            case "S":
+                    Console.WriteLine("This frame size is suitable for people no taller than 170 cm.");
+            break;
+                case "M":
+                    Console.WriteLine("This frame size is suitable for people no taller 170 - 178 cm.");
+            break;
+                case "L":
+                    Console.WriteLine("This frame size is suitable for people no taller 178 - 184 cm.");
+            break;
+                case "XL":
+                    Console.WriteLine("This frame size is suitable for people no taller 186 and lower cm.");
+                    break;
+                default:
+                    Console.WriteLine("Its invalid frame and YOU INVALID!!!");
+            break;
+        }
+            Console.WriteLine("Choise your wheel in your bike (26,27.5,29)");
+        Trek.WheelSize = Convert.ToDouble(Console.ReadLine());
+            switch (Trek.WheelSize)
+            {
+                case 26:
+                    Console.WriteLine("Its wheel so old ,and not have on sale: " + Trek.WheelSize);
+                    break;
+                case 27.5f:
+                    Console.WriteLine("Its so good wheelsize that 2021.(Freeride):" + Trek.WheelSize + "+");
+                    break;
+                case 29:
+                    Console.WriteLine("Its so agressive wheel that Downhill: " + Trek.WheelSize);
+                    break;
+                default:
+                    Console.WriteLine("Its invalid wheel.And you INVALID!");
+                    break;
+            }
+
+            Console.WriteLine("Ok.Its pretty cool choise.");
+            Console.WriteLine("\n" + "WheelSize Trek bike is: " + Trek.WheelSize + "\n" + "BikeSize Trek is: " + Trek.bikeSize);
+        }
+    }
+}
